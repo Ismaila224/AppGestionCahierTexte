@@ -11,13 +11,14 @@ namespace AppGestionCahierTexte.Models
     public class Classe
     {
         [Key]
-        public int idClasse {  get; set; }
+        public int idClasse { get; set; }
+        [Index(nameof(LibelleClasse),IsUnique = true)]
         [Required, MaxLength(20)]
         public String LibelleClasse { get; set; }
         public int? IdAnneeAcademique { get; set; }
 
-       [ForeignKey("IdAnneeAcademique")]
-        public virtual  AnneeAcademique AnneeAcademique { get; set; }
+        [ForeignKey("IdAnneeAcademique")]
+        public virtual AnneeAcademique AnneeAcademique { get; set; }
 
 
     }

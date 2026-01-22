@@ -41,14 +41,14 @@ namespace AppGestionCahierTexte.Views.Parametre
         {
             listeClasse.Clear();
             listeClasse = db.Classe.ToList();
-            dgvClasse.DataSource=null;
+            dgvClasse.DataSource = null;
             dgvClasse.DataSource = listeClasse;
         }
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-           if( cbbAnneeAcademique.SelectedIndex!=0 && cbbAnneeAcademique.SelectedItem !=null)
+            if (cbbAnneeAcademique.SelectedIndex != 0 && cbbAnneeAcademique.SelectedItem != null)
             {
-                if(txtLielleClasse.Text!="")
+                if (txtLielleClasse.Text != "")
                 {
                     AnneeAcademique AnneeAc = cbbAnneeAcademique.SelectedItem as AnneeAcademique;
                     Classe classe = new Classe();
@@ -58,7 +58,7 @@ namespace AppGestionCahierTexte.Views.Parametre
                     db.SaveChanges();
                     afficheAnne();
                     afficheClasse();
-                    cbbAnneeAcademique.SelectedIndex = 0; 
+                    cbbAnneeAcademique.SelectedIndex = 0;
                 }
                 else
                 {
@@ -75,13 +75,13 @@ namespace AppGestionCahierTexte.Views.Parametre
 
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
-            Classe c= dgvClasse.CurrentRow.DataBoundItem as Classe;
-            if( c != null )
+            Classe c = dgvClasse.CurrentRow.DataBoundItem as Classe;
+            if (c != null)
             {
                 txtLielleClasse.Text = c.LibelleClasse;
-                if(c.IdAnneeAcademique != null)
+                if (c.IdAnneeAcademique != null)
                 {
-                   cbbAnneeAcademique.SelectedValue = c.IdAnneeAcademique;
+                    cbbAnneeAcademique.SelectedValue = c.IdAnneeAcademique;
                 }
             }
         }
@@ -104,7 +104,7 @@ namespace AppGestionCahierTexte.Views.Parametre
             AnneeAcademique aa = cbbAnneeAcademique.SelectedItem as AnneeAcademique;
             if (c != null)
             {
-                if (aa != null && cbbAnneeAcademique.SelectedIndex !=0)
+                if (aa != null && cbbAnneeAcademique.SelectedIndex != 0)
                 {
                     c.LibelleClasse = txtLielleClasse.Text;
                     c.IdAnneeAcademique = aa.IdAnneeAcademique;

@@ -14,11 +14,17 @@ namespace AppGestionCahierTexte.Models
         [Required, MaxLength(100)]
         public string nomU { get; set; }
         [Required, MaxLength(100)]
-        public string prenomV { get; set; }
+        public string prenomU { get; set; }
         [Required, MaxLength(100)]
         public string adresseU { get; set; }
         [Required, MaxLength(100)]
         public string emailU { get; set; }
+        [Required, MaxLength(15)]
+        public string telephoneU { get; set; }
+        [Required, MaxLength(100)]
+        public string identifiantU { get; set; }
+        [Required, MaxLength(100)]
+        public string motDePasseU { get; set; }
 
     }
 }

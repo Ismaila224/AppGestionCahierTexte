@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AppGestionCahierTexte.Models
 {
-    public class Professeur: Utilisateur
+    public class Professeur : Utilisateur
     {
         [Required, MaxLength(100)]
         public string specialiteProf { get; set; }

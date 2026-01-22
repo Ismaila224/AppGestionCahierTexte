@@ -56,7 +56,7 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
             }
             else
             {
-                if(txtAdresse.Text=="" || txtEmail.Text=="" || txtNom.Text=="" || txtPrenom.Text=="")
+                if (txtAdresse.Text == "" || txtEmail.Text == "" || txtNom.Text == "" || txtPrenom.Text == "")
                 {
                     MessageBox.Show("Veuillez remplir tous les champs.");
                 }
@@ -65,7 +65,7 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                     Departement dep = cbbDepartementId.SelectedItem as Departement;
                     ChefDepartement chfD = new ChefDepartement();
                     chfD.nomU = txtNom.Text;
-                    chfD.prenomV = txtPrenom.Text;
+                    chfD.prenomU = txtPrenom.Text;
                     chfD.adresseU = txtAdresse.Text;
                     chfD.emailU = txtEmail.Text;
                     chfD.matriculeCd = txtNom.Text + txtPrenom.Text + chfD.IdU;
@@ -82,10 +82,10 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                     txtNom.Focus();
                 }
             }
-            
+
 
         }
 
-       
+
     }
 }

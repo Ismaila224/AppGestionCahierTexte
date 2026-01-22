@@ -12,6 +12,6 @@ namespace AppGestionCahierTexte.Models
         public string TitreCahier { get; set; }
         public string DescriptionCahier { get; set; }
         public int AnneeAcademiqueId { get; set; }
-       
+
     }
 }

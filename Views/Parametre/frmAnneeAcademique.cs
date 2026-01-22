@@ -30,7 +30,7 @@ namespace AppGestionCahierTexte.Views.Parametre
         }
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            if(txtLibelleAnneeAcademique.Text != "" && txtValueAnneeAcademique.Text != "")
+            if (txtLibelleAnneeAcademique.Text != "" && txtValueAnneeAcademique.Text != "")
             {
                 AnneeAcademique aa = new AnneeAcademique();
                 aa.LibelleAnneeAcademique = txtLibelleAnneeAcademique.Text;
@@ -47,8 +47,8 @@ namespace AppGestionCahierTexte.Views.Parametre
 
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
-            AnneeAcademique aa= dgvAnneeAcademique.CurrentRow.DataBoundItem as AnneeAcademique;
-            if (aa!=null)
+            AnneeAcademique aa = dgvAnneeAcademique.CurrentRow.DataBoundItem as AnneeAcademique;
+            if (aa != null)
             {
                 txtLibelleAnneeAcademique.Text = aa.LibelleAnneeAcademique;
                 txtValueAnneeAcademique.Text = aa.ValueAnneeAcademique.ToString();
@@ -70,7 +70,8 @@ namespace AppGestionCahierTexte.Views.Parametre
                 db.SaveChanges();
                 Affichage();
 
-            }else
+            }
+            else
             {
                 MessageBox.Show("Selectionner une ligne");
             }
@@ -85,7 +86,8 @@ namespace AppGestionCahierTexte.Views.Parametre
                 db.SaveChanges();
                 Affichage();
 
-            }else
+            }
+            else
             {
                 MessageBox.Show("Selectionner une ligne");
             }

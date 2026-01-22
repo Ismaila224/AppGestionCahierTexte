@@ -67,7 +67,9 @@
     <Reference Include="MySql.Data.EntityFramework, Version=9.5.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.EntityFramework.9.5.0\lib\net48\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -124,7 +126,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnneeAcademique.cs" />
-    <Compile Include="Models\Apprenent.cs" />
+    <Compile Include="Models\ResponsableClasse.cs" />
     <Compile Include="Models\BdCahierTexteContext.cs" />
     <Compile Include="Models\CahierText.cs" />
     <Compile Include="Models\ChefDepartement.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="Models\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\Crypto.cs" />
     <Compile Include="Views\Parametre\Depatement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Utilisateurs\frmChefDepartement.resx">
       <DependentUpon>frmChefDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Utilisateurs\frmResponsableClasse.resx">
+      <DependentUpon>frmResponsableClasse.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -11,6 +11,8 @@ using AppGestionCahierTexte.Views.Parametre;
 using AppGestionCahierTexte.Views.Utilisateurs;
 using Microsoft.VisualBasic.Devices;
 
+
+
 namespace AppGestionCahierTexte
 {
     public partial class frmMDI : Form
@@ -20,6 +22,7 @@ namespace AppGestionCahierTexte
             InitializeComponent();
         }
 
+        public string profil = "";
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -27,7 +30,7 @@ namespace AppGestionCahierTexte
 
         private void seDeconnecterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConnexion f= new frmConnexion();
+            frmConnexion f = new frmConnexion();
             f.Show();
             this.Close();
         }
@@ -48,7 +51,7 @@ namespace AppGestionCahierTexte
         {
             fermer();
             //Create a new instance of the MDI child template form
-            frmMatiere f= new frmMatiere();
+            frmMatiere f = new frmMatiere();
 
             //Set parent form for the child window 
             f.MdiParent = this;
@@ -63,7 +66,7 @@ namespace AppGestionCahierTexte
         {
             fermer();
             //Create a new instance of the MDI child template form
-            frmClasse f= new frmClasse();
+            frmClasse f = new frmClasse();
 
             //Set parent form for the child window 
             f.MdiParent = this;
@@ -77,7 +80,7 @@ namespace AppGestionCahierTexte
         {
             fermer();
             //Create a new instance of the MDI child template form
-            frmAnneeAcademique f= new frmAnneeAcademique();
+            frmAnneeAcademique f = new frmAnneeAcademique();
 
             //Set parent form for the child window 
             f.MdiParent = this;
@@ -94,6 +97,11 @@ namespace AppGestionCahierTexte
             this.Width = myComputer.Screen.Bounds.Width;
             this.Height = myComputer.Screen.Bounds.Height;
             this.Location = new Point(0, 0);
+            if(this.profil != "ADMIN")
+            {
+                this.responsableClasseToolStripMenuItem.Visible = false;
+
+			}
         }
 
         private void chefDeDepartementToolStripMenuItem_Click(object sender, EventArgs e)

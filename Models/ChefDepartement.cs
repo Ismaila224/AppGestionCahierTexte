@@ -14,6 +14,6 @@ namespace AppGestionCahierTexte.Models
         public int? IdDep { get; set; }
 
         [ForeignKey("IdDep")]
-        public virtual  Departement Departement { get; set; }
+        public virtual Departement Departement { get; set; }
     }
 }

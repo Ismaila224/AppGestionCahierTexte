@@ -28,8 +28,8 @@ namespace AppGestionCahierTexte.Views.Parametre
             dgvDepartement.DataSource = listDep;
         }
         private void btnAjouter_Click(object sender, EventArgs e)
-        { 
-               if(txtNomDepartement.Text !="")
+        {
+            if (txtNomDepartement.Text != "")
             {
 
                 Departement dep = new Departement();
@@ -47,10 +47,10 @@ namespace AppGestionCahierTexte.Views.Parametre
 
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
-            if(dgvDepartement.CurrentRow != null)
+            if (dgvDepartement.CurrentRow != null)
             {
                 Departement dep = dgvDepartement.CurrentRow.DataBoundItem as Departement;
-                if(dep != null)
+                if (dep != null)
                 {
                     txtNomDepartement.Text = dep.LibelleDep;
                 }
@@ -68,7 +68,7 @@ namespace AppGestionCahierTexte.Views.Parametre
                 Departement dep = dgvDepartement.CurrentRow.DataBoundItem as Departement;
                 if (dep != null)
                 {
-                    if(txtNomDepartement.Text != "")
+                    if (txtNomDepartement.Text != "")
                     {
                         dep.LibelleDep = txtNomDepartement.Text;
                         db.SaveChanges();

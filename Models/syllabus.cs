@@ -11,11 +11,11 @@ namespace AppGestionCahierTexte.Models
     {
         [Key]
         public int IdSyllabus { get; set; }
-         [Required, MaxLength(100)]
+        [Required, MaxLength(100)]
         public string TitreSyllabus { get; set; }
         [Required, MaxLength(100)]
-       public int volumeHoraire { get; set; }
+        public int volumeHoraire { get; set; }
         [Required, MaxLength(100)]
-       public string niveau { get; set; } 
+        public string niveau { get; set; }
     }
 }

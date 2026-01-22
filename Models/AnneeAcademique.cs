@@ -10,7 +10,7 @@ namespace AppGestionCahierTexte.Models
     public class AnneeAcademique
     {
         [Key]
-        public int IdAnneeAcademique {  get; set; }
+        public int IdAnneeAcademique { get; set; }
         [Required, MaxLength(100)]
         public String LibelleAnneeAcademique { get; set; }
         [Required]

@@ -14,6 +14,6 @@ namespace AppGestionCahierTexte.Models
         [Required, MaxLength(100)]
         public string LibelleM { get; set; }
         public DateTime DateDebutM { get; set; }
-        public DateTime DateFinM { get; set;}
+        public DateTime DateFinM { get; set; }
     }
 }
