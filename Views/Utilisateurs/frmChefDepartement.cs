@@ -1,10 +1,12 @@
 ﻿using AppGestionCahierTexte.Models;
+using AppGestionCahierTexte.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,42 +52,57 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            if (cbbDepartementId.SelectedIndex == 0)
+            try
             {
-                MessageBox.Show("Veuillez sélectionner un département.");
-            }
-            else
-            {
-                if (txtAdresse.Text == "" || txtEmail.Text == "" || txtNom.Text == "" || txtPrenom.Text == "")
+                if (cbbDepartementId.SelectedIndex == 0)
                 {
-                    MessageBox.Show("Veuillez remplir tous les champs.");
+                    MessageBox.Show("Veuillez sélectionner un département.");
                 }
                 else
                 {
-                    Departement dep = cbbDepartementId.SelectedItem as Departement;
-                    ChefDepartement chfD = new ChefDepartement();
-                    chfD.nomU = txtNom.Text;
-                    chfD.prenomU = txtPrenom.Text;
-                    chfD.adresseU = txtAdresse.Text;
-                    chfD.emailU = txtEmail.Text;
-                    chfD.matriculeCd = txtNom.Text + txtPrenom.Text + chfD.IdU;
-                    chfD.IdDep = dep.IdDep;
-                    db.ChefDepartement.Add(chfD);
-                    db.SaveChanges();
-                    AfficheDep();
-                    AfficheChefDep();
-                    cbbDepartementId.SelectedIndex = 0;
-                    txtNom.Text = "";
-                    txtPrenom.Text = "";
-                    txtAdresse.Text = "";
-                    txtEmail.Text = "";
-                    txtNom.Focus();
+                    if (txtAdresse.Text == "" || txtEmail.Text == "" || txtNom.Text == "" || txtPrenom.Text == "")
+                    {
+                        MessageBox.Show("Veuillez remplir tous les champs.");
+                    }
+                    else
+                    {
+                        string mdp = "passer123";
+                        MD5 md5Hash = MD5.Create();
+
+                        string mdpDefaut = Crypto.GetMd5Hash(md5Hash, mdp);
+                        Departement dep = cbbDepartementId.SelectedItem as Departement;
+                        ChefDepartement chfD = new ChefDepartement();
+                        chfD.nomU = txtNom.Text;
+                        chfD.prenomU = txtPrenom.Text;
+                        chfD.adresseU = txtAdresse.Text;
+                        chfD.emailU = txtEmail.Text;
+                        chfD.telephoneU = txtTelephone.Text;
+                        chfD.identifiantU = txtIdentifiant.Text;
+                        chfD.motDePasseU = mdpDefaut;
+                        chfD.matriculeCd = txtNom.Text + txtPrenom.Text + chfD.IdU;
+                        chfD.IdDep = dep.IdDep;
+                        db.ChefDepartement.Add(chfD);
+                        db.SaveChanges();
+                        AfficheDep();
+                        AfficheChefDep();
+                        cbbDepartementId.SelectedIndex = 0;
+                        txtNom.Text = "";
+                        txtPrenom.Text = "";
+                        txtAdresse.Text = "";
+                        txtEmail.Text = "";
+                        txtTelephone.Text = "";
+                        txtIdentifiant.Text = "";
+                        txtNom.Focus();
+                    }
                 }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erreur : " + ex.Message);
             }
 
 
         }
 
-
+        
     }
 }

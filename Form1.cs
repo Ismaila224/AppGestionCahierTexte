@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppGestionCahierTexte.Models;
 using AppGestionCahierTexte.Shared;
+using AppGestionCahierTexte.Views.Utilisateurs;
 using Microsoft.VisualBasic.ApplicationServices;
 
 namespace AppGestionCahierTexte
@@ -32,21 +33,32 @@ namespace AppGestionCahierTexte
             {
                 var user = this.txtIdentifiant.Text;
                 var password = this.txtMostDePasse.Text;
+                var pass = "passer123";
                 Utilisateur utilisateur = verifConnexion(user, password);
 				if (utilisateur != null)
                 {
                     
-                    frmMDI f = new frmMDI();
-                    f.profil = this.trouverProfil(utilisateur);
-                    f.Show();
-                    this.Hide();
+                    if(password == pass)
+                    {
+                        frmPassword f = new frmPassword();
+                        f.utilisateur = utilisateur;
+                        f.Show();
+                        this.Hide();
+
+                    }
+                    else
+                    {
+                        frmMDI f = new frmMDI();
+                        f.profil = this.trouverProfil(utilisateur);
+                        f.Show();
+                        this.Hide();
+                    }
                 }
                 else { MessageBox.Show("Identifiant ou mot de passe incorrecte");}
             }
             else
             {
                 MessageBox.Show("Zone de saisie non remplie");
-
             }
         }
 
@@ -56,14 +68,14 @@ namespace AppGestionCahierTexte
 			BdCahierTexteContext bd = new BdCahierTexteContext();
             if(bd.ResponsableClasse.Where(r => r.IdU == utilisateur.IdU).FirstOrDefault() != null)
             {
-                profil = "ADMIN";
+                profil = "Responsable";
             }
 			/*else if (bd.Professseur.Where(p => p.IdU == utilisateur.IdU).FirstOrDefault() != null ){
                 profil = "PROFESSEUR";
-            }
+            }*/
             else if (bd.ChefDepartement.Where(p => p.IdU == utilisateur.IdU).FirstOrDefault() != null){
                 profil = "ADMIN";
-            }*/
+            }
             return profil;
 
 		}
@@ -89,7 +101,7 @@ namespace AppGestionCahierTexte
                 }
 
             }
-            return utilisateur;
+            return null;
 
 
 		}

@@ -97,11 +97,16 @@ namespace AppGestionCahierTexte
             this.Width = myComputer.Screen.Bounds.Width;
             this.Height = myComputer.Screen.Bounds.Height;
             this.Location = new Point(0, 0);
-            if(this.profil != "ADMIN")
+            if(this.profil == "ADMIN")
             {
-                this.responsableClasseToolStripMenuItem.Visible = false;
-
-			}
+                this.utilisateursToolStripMenuItem.Visible = true;                
+                this.parametresToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                this.utilisateursToolStripMenuItem.Visible = false;
+                this.parametresToolStripMenuItem.Visible = false;
+            }
         }
 
         private void chefDeDepartementToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,18 +119,6 @@ namespace AppGestionCahierTexte
             //Display the child window
             f.Show();
             f.WindowState = FormWindowState.Maximized;
-        }
-
-        private void responsableClasseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fermer();
-            //Create a new instance of the MDI child template form
-            frmResponsableClasse RsC = new frmResponsableClasse();
-            //Set parent form for the child window
-            RsC.MdiParent = this;
-            //Display the child window
-            RsC.Show();
-            RsC.WindowState = FormWindowState.Maximized;
         }
 
         private void professeurToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,6 +143,19 @@ namespace AppGestionCahierTexte
             //Display the child window
             dep.Show();
             dep.WindowState = FormWindowState.Maximized;
+        }
+
+
+        private void responsableClasseToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            fermer();
+            //Create a new instance of the MDI child template form
+            frmResponsableClasse RsC = new frmResponsableClasse();
+            //Set parent form for the child window
+            RsC.MdiParent = this;
+            //Display the child window
+            RsC.Show();
+            RsC.WindowState = FormWindowState.Maximized;
         }
     }
 }

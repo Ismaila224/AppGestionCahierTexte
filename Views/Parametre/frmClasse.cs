@@ -18,7 +18,6 @@ namespace AppGestionCahierTexte.Views.Parametre
             InitializeComponent();
             afficheAnne();
             afficheClasse();
-
         }
         BdCahierTexteContext db = new BdCahierTexteContext();
         List<Classe> listeClasse = new List<Classe>();

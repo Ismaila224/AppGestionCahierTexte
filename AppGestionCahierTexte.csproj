@@ -124,6 +124,10 @@
     <Compile Include="frmMDI.Designer.cs">
       <DependentUpon>frmMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202601221544108_InitialCreate.cs" />
+    <Compile Include="Migrations\202601221544108_InitialCreate.Designer.cs">
+      <DependentUpon>202601221544108_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnneeAcademique.cs" />
     <Compile Include="Models\ResponsableClasse.cs" />
@@ -170,6 +174,12 @@
     <Compile Include="Views\Utilisateurs\frmChefDepartement.Designer.cs">
       <DependentUpon>frmChefDepartement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Utilisateurs\frmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Utilisateurs\frmPassword.Designer.cs">
+      <DependentUpon>frmPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Utilisateurs\frmProfesseur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMDI.resx">
       <DependentUpon>frmMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202601221544108_InitialCreate.resx">
+      <DependentUpon>202601221544108_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -211,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Utilisateurs\frmChefDepartement.resx">
       <DependentUpon>frmChefDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Utilisateurs\frmPassword.resx">
+      <DependentUpon>frmPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Utilisateurs\frmResponsableClasse.resx">
       <DependentUpon>frmResponsableClasse.cs</DependentUpon>
