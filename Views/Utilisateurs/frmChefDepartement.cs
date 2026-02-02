@@ -103,6 +103,97 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
 
         }
 
-        
+        private void btnSelectionner_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvChefDepartement.CurrentRow != null) { 
+                    ChefDepartement chefDep = dgvChefDepartement.CurrentRow.DataBoundItem as ChefDepartement;
+                    if (chefDep != null)
+                    {
+                        txtNom.Text = chefDep.nomU;
+                        txtPrenom.Text = chefDep.prenomU;
+                        txtAdresse.Text = chefDep.adresseU;
+                        txtEmail.Text = chefDep.emailU;
+                        txtTelephone.Text = chefDep.telephoneU;
+                        txtIdentifiant.Text = chefDep.identifiantU;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aucune ligne selectionner");
+                    }
+                }
+                else {
+                    MessageBox.Show("Aucune ligne selectionner");
+                     }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvChefDepartement.CurrentRow != null) {
+                    ChefDepartement ChefDep = dgvChefDepartement.CurrentRow.DataBoundItem as ChefDepartement;
+                    if (ChefDep != null) {
+                        db.ChefDepartement.Remove(ChefDep);
+                        db.SaveChanges();
+                        AfficheChefDep();
+                        clear();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selectionner la ligne a supprimer");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void clear()
+        {
+            txtNom.Text = "";
+            txtPrenom.Text = "";
+            txtAdresse.Text = "";
+            txtEmail.Text = "";
+            txtTelephone.Text =  "";
+            txtIdentifiant.Text = "";
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvChefDepartement.CurrentRow != null)
+                {
+                    ChefDepartement ChefDep = dgvChefDepartement.CurrentRow.DataBoundItem as ChefDepartement;
+                    if (ChefDep != null)
+                    {
+                        ChefDep.nomU = txtNom.Text;
+                        ChefDep.prenomU = txtPrenom.Text;
+                        ChefDep.adresseU = txtAdresse.Text;
+                        ChefDep.emailU = txtEmail.Text;
+                        ChefDep.telephoneU = txtTelephone.Text;
+                        ChefDep.identifiantU = txtIdentifiant.Text;
+
+                        db.SaveChanges();
+                        AfficheChefDep();
+                        clear();
+                    }
+                } else {
+                    MessageBox.Show("Aucune ligne selectionner");
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

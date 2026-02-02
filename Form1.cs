@@ -29,7 +29,7 @@ namespace AppGestionCahierTexte
 
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
-            if (verifSaisie())
+            /*if (verifSaisie())
             {
                 var user = this.txtIdentifiant.Text;
                 var password = this.txtMostDePasse.Text;
@@ -54,15 +54,24 @@ namespace AppGestionCahierTexte
                         this.Hide();
                     }
                 }
-                else { MessageBox.Show("Identifiant ou mot de passe incorrecte");}
+                else { MessageBox.Show("Identifiant ou mot de passe incorrecte");
+
+                    frmMDI f = new frmMDI();
+                    f.Show();
+                    this.Hide();
+                }
             }
             else
             {
                 MessageBox.Show("Zone de saisie non remplie");
-            }
+            }*/
+
+            frmMDI f = new frmMDI();
+            f.Show();
+            this.Hide();
         }
 
-        private string trouverProfil(Utilisateur utilisateur)
+       /*private string trouverProfil(Utilisateur utilisateur)
         {
             string profil = null;
 			BdCahierTexteContext bd = new BdCahierTexteContext();
@@ -72,7 +81,7 @@ namespace AppGestionCahierTexte
             }
 			/*else if (bd.Professseur.Where(p => p.IdU == utilisateur.IdU).FirstOrDefault() != null ){
                 profil = "PROFESSEUR";
-            }*/
+            }
             else if (bd.ChefDepartement.Where(p => p.IdU == utilisateur.IdU).FirstOrDefault() != null){
                 profil = "ADMIN";
             }
@@ -104,6 +113,6 @@ namespace AppGestionCahierTexte
             return null;
 
 
-		}
+		}*/
     }
 }
