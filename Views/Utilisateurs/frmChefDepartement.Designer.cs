@@ -73,11 +73,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtNom);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(46, 24);
+            this.groupBox1.Location = new System.Drawing.Point(46, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(418, 704);
+            this.groupBox1.Size = new System.Drawing.Size(418, 686);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -216,7 +216,7 @@
             this.groupBox2.Controls.Add(this.btnQuitter);
             this.groupBox2.Controls.Add(this.btnSelectionner);
             this.groupBox2.Controls.Add(this.btnAjouter);
-            this.groupBox2.Location = new System.Drawing.Point(46, 756);
+            this.groupBox2.Location = new System.Drawing.Point(46, 715);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -244,35 +244,38 @@
             // 
             // btnSupprimer
             // 
+            this.btnSupprimer.BackColor = System.Drawing.Color.Brown;
             this.btnSupprimer.Location = new System.Drawing.Point(234, 170);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(160, 51);
             this.btnSupprimer.TabIndex = 4;
             this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.UseVisualStyleBackColor = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnModifier
             // 
+            this.btnModifier.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.btnModifier.Location = new System.Drawing.Point(20, 170);
             this.btnModifier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(160, 51);
             this.btnModifier.TabIndex = 3;
             this.btnModifier.Text = "Modifier";
-            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.UseVisualStyleBackColor = false;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnQuitter
             // 
+            this.btnQuitter.BackColor = System.Drawing.Color.Red;
             this.btnQuitter.Location = new System.Drawing.Point(20, 242);
             this.btnQuitter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(374, 51);
             this.btnQuitter.TabIndex = 2;
             this.btnQuitter.Text = "Quitter";
-            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // btnSelectionner
@@ -288,24 +291,25 @@
             // 
             // btnAjouter
             // 
+            this.btnAjouter.BackColor = System.Drawing.Color.Blue;
             this.btnAjouter.Location = new System.Drawing.Point(20, 86);
             this.btnAjouter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(160, 51);
             this.btnAjouter.TabIndex = 0;
             this.btnAjouter.Text = "Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.UseVisualStyleBackColor = false;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // dgvChefDepartement
             // 
             this.dgvChefDepartement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChefDepartement.Location = new System.Drawing.Point(646, 134);
+            this.dgvChefDepartement.Location = new System.Drawing.Point(532, 134);
             this.dgvChefDepartement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvChefDepartement.Name = "dgvChefDepartement";
             this.dgvChefDepartement.RowHeadersWidth = 51;
             this.dgvChefDepartement.RowTemplate.Height = 24;
-            this.dgvChefDepartement.Size = new System.Drawing.Size(1323, 919);
+            this.dgvChefDepartement.Size = new System.Drawing.Size(1177, 763);
             this.dgvChefDepartement.TabIndex = 2;
             // 
             // frmChefDepartement
