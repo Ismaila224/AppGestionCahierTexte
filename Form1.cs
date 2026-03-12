@@ -12,19 +12,26 @@ using AppGestionCahierTexte.Models;
 using AppGestionCahierTexte.Shared;
 using AppGestionCahierTexte.Views.Utilisateurs;
 using Microsoft.VisualBasic.ApplicationServices;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+
+
 
 namespace AppGestionCahierTexte
 {
     public partial class frmConnexion : Form
     {
+        private readonly ILogger<frmConnexion> _logger;
         public frmConnexion()
         {
             InitializeComponent();
+            _logger = LogClasse.ServiceProvider.GetService<ILogger<frmConnexion>>();
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            _logger.LogInformation("Application quittée par l'utilisateur");
         }
 
         private void btnSeConnecter_Click(object sender, EventArgs e)
@@ -44,6 +51,8 @@ namespace AppGestionCahierTexte
                         f.utilisateur = utilisateur;
                         f.Show();
                         this.Hide();
+                        _logger.LogInformation("Utilisateur {User} connecté avec succès, mot de passe par défaut utilisé", user);
+                        LogClasse.Info("Ttentative de connexion","Utilisateur  "+user+" connecté avec succès, mot de passe par défaut utilisé");
 
                     }
                     else
@@ -52,10 +61,16 @@ namespace AppGestionCahierTexte
                         f.profil = this.trouverProfil(utilisateur);
                         f.Show();
                         this.Hide();
+                        _logger.LogInformation("Utilisateur {User} connecté avec succès", user);
+                        LogClasse.Info("Ttentative de connexion", "Utilisateur  " + user + " connecté avec succès");
+
                     }
                 }
-                else { MessageBox.Show("Identifiant ou mot de passe incorrecte");
-
+                else { 
+                    MessageBox.Show("Identifiant ou mot de passe incorrecte");
+                    _logger.LogWarning("Tentative de connexion échouée pour l'utilisateur {User}", user);
+                    LogClasse.Warning("Ttentative de connexion", "Tentative de connexion échouée pour l'utilisateur  " + user);
+                    mail.sendEmail();
                 }
             }
             else
@@ -103,7 +118,7 @@ namespace AppGestionCahierTexte
                  {
                      return utilisateur;
                  }
-
+                
              }
              return null;
 
