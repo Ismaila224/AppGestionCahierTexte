@@ -1,7 +1,11 @@
-﻿using System;
+﻿using AppGestionCahierTexte.Models;
+using AppGestionCahierTexte.Shared ;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -10,9 +14,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using AppGestionCahierTexte.Models;
-using AppGestionCahierTexte.Shared ;
-using System.Data.Entity;
 
 
 namespace AppGestionCahierTexte.Views.Utilisateurs
@@ -23,7 +24,8 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
         {
             InitializeComponent();
 			affichage();
-		}
+            chargementCbb();
+        }
 		List<ResponsableClasse> responsables = new List<ResponsableClasse>();
          BdCahierTexteContext db = new BdCahierTexteContext();
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
 
                 if (verifSaisie())
                 {
+                    Classe classe = cbbClasse.SelectedItem as Classe;
                     ResponsableClasse responsable = new ResponsableClasse
                     {
                         nomU = txtNom.Text,
@@ -46,11 +49,13 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                         telephoneU = txtTel.Text,
                         identifiantU = txtIdentifiant.Text,
                         motDePasseU = mdpDefaut,
-                        MatriculeApprenant = txtMat.Text,
-                        idClasse = int.Parse(txtNomClasse.Text)
+                        MatriculeApprenant = "matricule",
+                        idClasse = classe.idClasse,
 
                     };
                     db.ResponsableClasse.Add(responsable);
+                    db.SaveChanges();
+                    responsable.MatriculeApprenant = "R-" + txtPrenom.Text.Substring(0, 1).ToUpper() + txtNom.Text.Substring(0, 1).ToUpper() + "-" + responsable.IdU.ToString().PadLeft(3, '0');
                     db.SaveChanges();
                     clear();
                     affichage();
@@ -60,12 +65,35 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                 {
                     MessageBox.Show("Remplir tous les champs");
                 }
-            }catch(Exception ex)
-            {
-                  MessageBox.Show(ex.Message);
             }
-		}
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var error in entityErrors.ValidationErrors)
+                    {
+                        MessageBox.Show(error.PropertyName + " : " + error.ErrorMessage);
+                    }
+                }
+            }
+        }
 
+        public void chargementCbb()
+        {
+            List<Classe> classes = new List<Classe>();
+            classes = db.Classe.ToList();
+            classes.Insert(0, new Classe
+            {
+                idClasse = 0,
+                LibelleClasse = "Sélectionner"
+            });
+            this.cbbClasse.Items.Clear();
+            this.cbbClasse.DataSource = classes;
+            this.cbbClasse.DisplayMember = "LibelleClasse";
+            this.cbbClasse.ValueMember = "idClasse";
+            cbbClasse.SelectedIndex = 0;
+
+        }
 
 
         public void clear()
@@ -76,8 +104,7 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
             this.txtEmail.Text = string.Empty;
             this.txtTel.Text = string.Empty;
             this.txtIdentifiant.Text = string.Empty;
-            this.txtMat.Text = string.Empty;
-            this.txtNomClasse.Text = string.Empty;
+            this.cbbClasse.SelectedIndex = 0;
         }
         public void affichage()
         {
@@ -102,8 +129,8 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
 					!(string.IsNullOrEmpty(txtEmail.Text)) ||
 					!(string.IsNullOrEmpty(txtTel.Text)) ||
 					!(string.IsNullOrEmpty(txtIdentifiant.Text)) ||
-					!(string.IsNullOrEmpty(txtMat.Text))
-				;
+					!(this.cbbClasse.SelectedIndex != 0)
+                ;
 		}
 
         private void btnSelectionner_Click(object sender, EventArgs e)
@@ -119,7 +146,6 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                         txtPrenom.Text = responsable.prenomU;
                         txtEmail.Text = responsable.emailU;
                         txtAdresse.Text = responsable.adresseU;
-                        txtMat.Text = responsable.MatriculeApprenant;
                         txtTel.Text = responsable.telephoneU;
                         txtIdentifiant.Text = responsable.identifiantU;
                         
@@ -156,7 +182,6 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                         txtPrenom.Text = "";
                         txtEmail.Text = "";
                         txtAdresse.Text = "";
-                        txtMat.Text = "";
                         txtTel.Text = "";
                         txtIdentifiant.Text = "";
                     }
@@ -191,7 +216,6 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                             responsable.prenomU = txtPrenom.Text;
                             responsable.emailU = txtEmail.Text;
                             responsable.adresseU = txtAdresse.Text;
-                            responsable.MatriculeApprenant = txtMat.Text;
                             responsable.telephoneU = txtTel.Text;
                             responsable.identifiantU = txtIdentifiant.Text;
                             db.SaveChanges();

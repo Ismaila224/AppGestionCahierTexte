@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppGestionCahierTexte.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace AppGestionCahierTexte.Views.Parametre
         public frmMatiere()
         {
             InitializeComponent();
+        }
+        BdCahierTexteContext db = new BdCahierTexteContext();
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            Matiere matiere = new Matiere();
+            matiere.libelleMatiere = txtLibelle.Text;  
+            matiere.VolumeHoreureMatiere = int.Parse(txtVolumeH.Text);
+            db.Matieres.Add(matiere);
+            db.SaveChanges();
         }
     }
 }

@@ -148,7 +148,7 @@
     <Compile Include="frmMDI.Designer.cs">
       <DependentUpon>frmMDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogClasse.cs" />
+    <Compile Include="Shared\LogClasse.cs" />
     <Compile Include="Migrations\202601221544108_InitialCreate.cs" />
     <Compile Include="Migrations\202601221544108_InitialCreate.Designer.cs">
       <DependentUpon>202601221544108_InitialCreate.cs</DependentUpon>
@@ -254,6 +254,9 @@
     <EmbeddedResource Include="Views\Utilisateurs\frmPassword.resx">
       <DependentUpon>frmPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Utilisateurs\frmProfesseur.resx">
+      <DependentUpon>frmProfesseur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Utilisateurs\frmResponsableClasse.resx">
       <DependentUpon>frmResponsableClasse.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,8 +274,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="Logs\Logs.txt" />
+    <Content Include="Logs\ErreurLog.txt" />
+    <Content Include="Logs\WarningLog.txt" />
+    <Content Include="Logs\Log.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
