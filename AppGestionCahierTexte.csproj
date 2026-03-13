@@ -277,8 +277,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Logs\ErreurLog.txt" />
-    <Content Include="Logs\WarningLog.txt" />
-    <Content Include="Logs\Log.txt" />
+    <Content Include="Logs\Logs.txt" />
+    <Content Include="Logs\Warning.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

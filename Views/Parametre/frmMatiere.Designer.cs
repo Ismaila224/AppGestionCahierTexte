@@ -71,6 +71,7 @@
             this.btnSupprimer.TabIndex = 60;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = false;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // Modifier
             // 
@@ -82,6 +83,7 @@
             this.Modifier.TabIndex = 59;
             this.Modifier.Text = "Modifier";
             this.Modifier.UseVisualStyleBackColor = false;
+            this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
             // 
             // btnSelectionner
             // 
@@ -92,6 +94,7 @@
             this.btnSelectionner.TabIndex = 58;
             this.btnSelectionner.Text = "Selectionner";
             this.btnSelectionner.UseVisualStyleBackColor = false;
+            this.btnSelectionner.Click += new System.EventHandler(this.btnSelectionner_Click);
             // 
             // btnAjouter
             // 

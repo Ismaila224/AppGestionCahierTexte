@@ -29,9 +29,9 @@ namespace AppGestionCahierTexte
             ServiceProvider = services.BuildServiceProvider();
 
         }
-        static string chemin = "C:\\Users\\ACER\\source\\repos\\AppGestionCahierTexteOfficiel\\Logs\\Logs.txt";
-        static string cheminE = "C:\\Users\\ACER\\source\\repos\\AppGestionCahierTexteOfficiel\\Logs\\ErreurLog.txt";
-        static string cheminW = "C:\\Users\\ACER\\source\\repos\\AppGestionCahierTexteOfficiel\\Logs\\WarningLog.txt";
+        static string chemin = "C:\\Users\\Lenovo\\source\\repos\\AppGestionCahierTexteN\\Logs\\Logs.txt";
+        static string cheminE = "C:\\Users\\Lenovo\\source\\repos\\AppGestionCahierTexteN\\Logs\\ErreurLog.txt";
+        static string cheminW = "C:\\Users\\Lenovo\\source\\repos\\AppGestionCahierTexteN\\Logs\\Warning.txt";
         public static void Info(string titre, string message)
         {
             Ecrire("INFO", titre, message, chemin);

@@ -13,7 +13,7 @@ namespace AppGestionCahierTexte.Shared
 
         public static void sendEmail()
         {
-            string logFilePath = @"C:\Users\Lenovo\source\repos\Ismaila224\AppGestionCahierTexte\Logs\Logs.txt";
+            string logFilePath = @"C:\Users\Lenovo\source\repos\AppGestionCahierTexteN\Logs\Logs.txt";
 
             try
             {
