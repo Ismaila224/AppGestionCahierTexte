@@ -164,7 +164,7 @@
     <Compile Include="Models\Matiere.cs" />
     <Compile Include="Models\Module.cs" />
     <Compile Include="Models\Professeur.cs" />
-    <Compile Include="Models\syllabus.cs" />
+    <Compile Include="Models\Syllabus.cs" />
     <Compile Include="Models\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,6 +193,12 @@
     </Compile>
     <Compile Include="Views\Parametre\frmMatiere.Designer.cs">
       <DependentUpon>frmMatiere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parametre\frmSylalabus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Parametre\frmSylalabus.Designer.cs">
+      <DependentUpon>frmSylalabus.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Utilisateurs\frmChefDepartement.cs">
       <SubType>Form</SubType>
@@ -248,6 +254,9 @@
     <EmbeddedResource Include="Views\Parametre\frmMatiere.resx">
       <DependentUpon>frmMatiere.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Parametre\frmSylalabus.resx">
+      <DependentUpon>frmSylalabus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Utilisateurs\frmChefDepartement.resx">
       <DependentUpon>frmChefDepartement.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,7 +283,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Logs\ErreurLog.txt" />
     <Content Include="Logs\Logs.txt" />

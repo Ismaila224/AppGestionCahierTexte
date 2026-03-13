@@ -13,12 +13,12 @@ namespace AppGestionCahierTexte.Shared
 
         public static void sendEmail()
         {
-            string logFilePath = @"C:\Users\Lenovo\source\repos\AppGestionCahierTexteN\Logs\Logs.txt";
+            string logFilePath = @"C:\Users\USER\source\repos\AppGestionCahierTexte\Logs\Logs.txt";
 
             try
             {
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("ismailadiallo6328@gmail.com");
+                mail.From = new MailAddress("ismailadiallo6328 @gmail.com");
                 mail.To.Add("saambadiall6@gmail.com");
                 mail.Subject = "Alerte - Fichier Log Application";
                 mail.Body = "Veuillez trouver ci-joint le fichier log.";

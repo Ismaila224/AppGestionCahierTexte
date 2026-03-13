@@ -157,5 +157,17 @@ namespace AppGestionCahierTexte
             RsC.Show();
             RsC.WindowState = FormWindowState.Maximized;
         }
+
+        private void syllabusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            //Create a new instance of the MDI child template form
+            frmSylalabus f = new frmSylalabus();
+            //Set parent form for the child window
+            f.MdiParent = this;
+            //Display the child window
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+        }
     }
 }

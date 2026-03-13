@@ -37,6 +37,7 @@
             this.classeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anneeAcademiqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.syllabusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chefDeDepartementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professeurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Sienna;
+            this.menuStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -60,7 +61,8 @@
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(147, 562);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(147, 666);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -70,7 +72,7 @@
             this.seDeconnecterToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.actionsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.actionsToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.actionsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
             this.actionsToolStripMenuItem.Size = new System.Drawing.Size(132, 34);
@@ -96,9 +98,10 @@
             this.matiereToolStripMenuItem,
             this.classeToolStripMenuItem,
             this.anneeAcademiqueToolStripMenuItem,
-            this.departementToolStripMenuItem});
+            this.departementToolStripMenuItem,
+            this.syllabusToolStripMenuItem});
             this.parametresToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parametresToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.parametresToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.parametresToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.parametresToolStripMenuItem.Name = "parametresToolStripMenuItem";
             this.parametresToolStripMenuItem.Size = new System.Drawing.Size(132, 34);
@@ -132,6 +135,13 @@
             this.departementToolStripMenuItem.Text = "Departement";
             this.departementToolStripMenuItem.Click += new System.EventHandler(this.departementToolStripMenuItem_Click);
             // 
+            // syllabusToolStripMenuItem
+            // 
+            this.syllabusToolStripMenuItem.Name = "syllabusToolStripMenuItem";
+            this.syllabusToolStripMenuItem.Size = new System.Drawing.Size(307, 38);
+            this.syllabusToolStripMenuItem.Text = "Syllabus";
+            this.syllabusToolStripMenuItem.Click += new System.EventHandler(this.syllabusToolStripMenuItem_Click);
+            // 
             // utilisateursToolStripMenuItem
             // 
             this.utilisateursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -139,7 +149,7 @@
             this.professeurToolStripMenuItem,
             this.responsableClasseToolStripMenuItem});
             this.utilisateursToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.utilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.utilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.utilisateursToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.utilisateursToolStripMenuItem.Name = "utilisateursToolStripMenuItem";
             this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(132, 34);
@@ -169,7 +179,7 @@
             // profilToolStripMenuItem
             // 
             this.profilToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profilToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.profilToolStripMenuItem.ForeColor = System.Drawing.Color.Gray;
             this.profilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.profilToolStripMenuItem.Name = "profilToolStripMenuItem";
             this.profilToolStripMenuItem.Size = new System.Drawing.Size(132, 34);
@@ -179,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(1094, 666);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -211,5 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem departementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem responsableClasseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem syllabusToolStripMenuItem;
     }
 }

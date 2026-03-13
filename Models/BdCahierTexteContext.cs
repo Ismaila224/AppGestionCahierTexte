@@ -20,6 +20,7 @@ namespace AppGestionCahierTexte.Models
         public DbSet<ChefDepartement> ChefDepartement { get; set; }
         public DbSet<ResponsableClasse> ResponsableClasse { get; set; }
         public DbSet<Professeur> Professeur { get; set; }
+        public DbSet<Syllabus> Syllabus { get; set; }
 
     }
 }

@@ -69,7 +69,7 @@ namespace AppGestionCahierTexte
                 else { 
                     MessageBox.Show("Identifiant ou mot de passe incorrecte");
                     _logger.LogWarning("Tentative de connexion échouée pour l'utilisateur {User}", user);
-                    LogClasse.Warning("Ttentative de connexion", "Tentative de connexion échouée pour l'utilisateur  " + user);
+                    LogClasse.Warning("Tentative de connexion", "Utilisateur " + user + "Connecté avec succès");
                     mail.sendEmail();
                 }
             }
