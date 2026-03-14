@@ -49,7 +49,7 @@
             // 
             this.Classe.AutoSize = true;
             this.Classe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Classe.Location = new System.Drawing.Point(77, 442);
+            this.Classe.Location = new System.Drawing.Point(10, 342);
             this.Classe.Name = "Classe";
             this.Classe.Size = new System.Drawing.Size(63, 20);
             this.Classe.TabIndex = 25;
@@ -59,7 +59,7 @@
             // 
             this.cbbClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbClasse.FormattingEnabled = true;
-            this.cbbClasse.Location = new System.Drawing.Point(81, 481);
+            this.cbbClasse.Location = new System.Drawing.Point(14, 381);
             this.cbbClasse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbClasse.Name = "cbbClasse";
             this.cbbClasse.Size = new System.Drawing.Size(236, 33);
@@ -79,10 +79,10 @@
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(905, 739);
+            this.btnQuitter.Location = new System.Drawing.Point(128, 664);
             this.btnQuitter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(238, 44);
+            this.btnQuitter.Size = new System.Drawing.Size(211, 44);
             this.btnQuitter.TabIndex = 22;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -91,10 +91,10 @@
             // btnSupprimer
             // 
             this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(79, 671);
+            this.btnSupprimer.Location = new System.Drawing.Point(128, 577);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(238, 50);
+            this.btnSupprimer.Size = new System.Drawing.Size(211, 50);
             this.btnSupprimer.TabIndex = 21;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -103,10 +103,10 @@
             // Modifier
             // 
             this.Modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Modifier.Location = new System.Drawing.Point(79, 613);
+            this.Modifier.Location = new System.Drawing.Point(394, 17);
             this.Modifier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(238, 50);
+            this.Modifier.Size = new System.Drawing.Size(212, 50);
             this.Modifier.TabIndex = 20;
             this.Modifier.Text = "Modifier";
             this.Modifier.UseVisualStyleBackColor = true;
@@ -115,10 +115,10 @@
             // btnSelectionner
             // 
             this.btnSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectionner.Location = new System.Drawing.Point(81, 108);
+            this.btnSelectionner.Location = new System.Drawing.Point(932, 13);
             this.btnSelectionner.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSelectionner.Name = "btnSelectionner";
-            this.btnSelectionner.Size = new System.Drawing.Size(238, 52);
+            this.btnSelectionner.Size = new System.Drawing.Size(212, 52);
             this.btnSelectionner.TabIndex = 19;
             this.btnSelectionner.Text = "Selectionner";
             this.btnSelectionner.UseVisualStyleBackColor = true;
@@ -127,10 +127,10 @@
             // btnAjouter
             // 
             this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouter.Location = new System.Drawing.Point(77, 549);
+            this.btnAjouter.Location = new System.Drawing.Point(666, 13);
             this.btnAjouter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(238, 54);
+            this.btnAjouter.Size = new System.Drawing.Size(212, 54);
             this.btnAjouter.TabIndex = 18;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 176);
+            this.label1.Location = new System.Drawing.Point(10, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 16;
@@ -149,7 +149,7 @@
             // txtLibelle
             // 
             this.txtLibelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLibelle.Location = new System.Drawing.Point(79, 304);
+            this.txtLibelle.Location = new System.Drawing.Point(12, 204);
             this.txtLibelle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLibelle.Name = "txtLibelle";
             this.txtLibelle.Size = new System.Drawing.Size(238, 30);
@@ -159,7 +159,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 265);
+            this.label3.Location = new System.Drawing.Point(10, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 27;
@@ -169,7 +169,7 @@
             // 
             this.cbbMatieres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbMatieres.FormattingEnabled = true;
-            this.cbbMatieres.Location = new System.Drawing.Point(79, 218);
+            this.cbbMatieres.Location = new System.Drawing.Point(12, 118);
             this.cbbMatieres.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbMatieres.Name = "cbbMatieres";
             this.cbbMatieres.Size = new System.Drawing.Size(236, 33);
@@ -179,7 +179,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(77, 359);
+            this.label4.Location = new System.Drawing.Point(10, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.TabIndex = 29;
@@ -188,7 +188,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(81, 396);
+            this.txtDescription.Location = new System.Drawing.Point(14, 296);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(238, 30);

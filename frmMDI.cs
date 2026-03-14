@@ -1,28 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppGestionCahierTexte.Views.Parametre;
 using AppGestionCahierTexte.Views.Utilisateurs;
 using Microsoft.VisualBasic.Devices;
 
-
-
 namespace AppGestionCahierTexte
 {
     public partial class frmMDI : Form
     {
+        public string profil = "";
+
         public frmMDI()
         {
             InitializeComponent();
+            AppliquerTheme();
         }
 
-        public string profil = "";
+        // ── Thème sidebar ──────────────────────────────────────────────────────
+        private void AppliquerTheme()
+        {
+            // Couleurs du MenuStrip
+            menuStrip1.BackColor = Color.FromArgb(15, 30, 60);
+            menuStrip1.ForeColor = Color.White;
+
+            // Couleurs de chaque item principal
+            Color[] couleursItems = {
+                Color.FromArgb(200, 215, 240),
+                Color.FromArgb(200, 215, 240),
+                Color.FromArgb(200, 215, 240),
+                Color.FromArgb(200, 215, 240)
+            };
+
+            ToolStripMenuItem[] items = {
+                actionsToolStripMenuItem,
+                parametresToolStripMenuItem,
+                utilisateursToolStripMenuItem,
+                profilToolStripMenuItem
+            };
+
+            foreach (var item in items)
+            {
+                item.ForeColor = Color.FromArgb(200, 215, 240);
+                item.BackColor = Color.FromArgb(15, 30, 60);
+                item.Font = new Font("Segoe UI", 10.5f, FontStyle.Bold);
+
+                // Sous-items
+                foreach (ToolStripItem sub in item.DropDownItems)
+                {
+                    sub.BackColor = Color.FromArgb(22, 44, 85);
+                    sub.ForeColor = Color.FromArgb(200, 215, 240);
+                    sub.Font = new Font("Segoe UI", 10f);
+                }
+            }
+        }
+
+        // ── Événements ────────────────────────────────────────────────────────
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -37,41 +70,24 @@ namespace AppGestionCahierTexte
 
         private void fermer()
         {
-            Form[] charr = this.MdiChildren;
-
-            //For each child form set the window state to Maximized 
-            foreach (Form chform in charr)
-            {
-                //chform.WindowState = FormWindowState.Maximized;
+            foreach (Form chform in this.MdiChildren)
                 chform.Close();
-            }
         }
 
         private void matiereToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
-            //Create a new instance of the MDI child template form
             frmMatiere f = new frmMatiere();
-
-            //Set parent form for the child window 
             f.MdiParent = this;
-
-            //Display the child window
             f.Show();
             f.WindowState = FormWindowState.Maximized;
-
         }
 
         private void classeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
-            //Create a new instance of the MDI child template form
             frmClasse f = new frmClasse();
-
-            //Set parent form for the child window 
             f.MdiParent = this;
-
-            //Display the child window
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }
@@ -79,16 +95,10 @@ namespace AppGestionCahierTexte
         private void anneeAcademiqueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
-            //Create a new instance of the MDI child template form
             frmAnneeAcademique f = new frmAnneeAcademique();
-
-            //Set parent form for the child window 
             f.MdiParent = this;
-
-            //Display the child window
             f.Show();
             f.WindowState = FormWindowState.Maximized;
-
         }
 
         private void frmMDI_Load(object sender, EventArgs e)
@@ -97,26 +107,30 @@ namespace AppGestionCahierTexte
             this.Width = myComputer.Screen.Bounds.Width;
             this.Height = myComputer.Screen.Bounds.Height;
             this.Location = new Point(0, 0);
-            if(this.profil == "ADMIN")
+
+            // Mise à jour de la date dans la topbar
+            lblTopDate.Text = DateTime.Now.ToString(
+                "dddd d MMMM yyyy",
+                new System.Globalization.CultureInfo("fr-FR"));
+
+            // Visibilité selon le profil
+            if (this.profil == "ADMIN")
             {
-                this.utilisateursToolStripMenuItem.Visible = true;                
-                this.parametresToolStripMenuItem.Visible = true;
+                utilisateursToolStripMenuItem.Visible = true;
+                parametresToolStripMenuItem.Visible = true;
             }
             else
             {
-                this.utilisateursToolStripMenuItem.Visible = false;
-                this.parametresToolStripMenuItem.Visible = false;
+                utilisateursToolStripMenuItem.Visible = false;
+                parametresToolStripMenuItem.Visible = false;
             }
         }
 
         private void chefDeDepartementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
-            //Create a new instance of the MDI child template form
             frmChefDepartement f = new frmChefDepartement();
-            //Set parent form for the child window
             f.MdiParent = this;
-            //Display the child window
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }
@@ -124,11 +138,8 @@ namespace AppGestionCahierTexte
         private void professeurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
-            //Create a new instance of the MDI child template form
             frmProfesseur prof = new frmProfesseur();
-            //Set parent form for the child window
             prof.MdiParent = this;
-            //Display the child window
             prof.Show();
             prof.WindowState = FormWindowState.Maximized;
         }
@@ -136,24 +147,17 @@ namespace AppGestionCahierTexte
         private void departementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
-            //Create a new instance of the MDI child template form
             frmDepatement dep = new frmDepatement();
-            //Set parent form for the child window
             dep.MdiParent = this;
-            //Display the child window
             dep.Show();
             dep.WindowState = FormWindowState.Maximized;
         }
 
-
         private void responsableClasseToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             fermer();
-            //Create a new instance of the MDI child template form
             frmResponsableClasse RsC = new frmResponsableClasse();
-            //Set parent form for the child window
             RsC.MdiParent = this;
-            //Display the child window
             RsC.Show();
             RsC.WindowState = FormWindowState.Maximized;
         }
@@ -161,11 +165,8 @@ namespace AppGestionCahierTexte
         private void syllabusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
-            //Create a new instance of the MDI child template form
             frmSylalabus f = new frmSylalabus();
-            //Set parent form for the child window
             f.MdiParent = this;
-            //Display the child window
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }

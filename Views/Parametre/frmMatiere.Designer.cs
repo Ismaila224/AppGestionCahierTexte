@@ -68,10 +68,10 @@
             this.btnSupprimer.BackColor = System.Drawing.Color.Transparent;
             this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupprimer.ForeColor = System.Drawing.Color.Black;
-            this.btnSupprimer.Location = new System.Drawing.Point(82, 644);
+            this.btnSupprimer.Location = new System.Drawing.Point(122, 556);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(238, 44);
+            this.btnSupprimer.Size = new System.Drawing.Size(212, 44);
             this.btnSupprimer.TabIndex = 60;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = false;
@@ -82,10 +82,10 @@
             this.Modifier.BackColor = System.Drawing.Color.Transparent;
             this.Modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modifier.ForeColor = System.Drawing.Color.Black;
-            this.Modifier.Location = new System.Drawing.Point(82, 567);
+            this.Modifier.Location = new System.Drawing.Point(702, 28);
             this.Modifier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(238, 50);
+            this.Modifier.Size = new System.Drawing.Size(224, 50);
             this.Modifier.TabIndex = 59;
             this.Modifier.Text = "Modifier";
             this.Modifier.UseVisualStyleBackColor = false;
@@ -95,10 +95,10 @@
             // 
             this.btnSelectionner.BackColor = System.Drawing.Color.Transparent;
             this.btnSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectionner.Location = new System.Drawing.Point(83, 157);
+            this.btnSelectionner.Location = new System.Drawing.Point(998, 26);
             this.btnSelectionner.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSelectionner.Name = "btnSelectionner";
-            this.btnSelectionner.Size = new System.Drawing.Size(237, 52);
+            this.btnSelectionner.Size = new System.Drawing.Size(223, 52);
             this.btnSelectionner.TabIndex = 58;
             this.btnSelectionner.Text = "Selectionner";
             this.btnSelectionner.UseVisualStyleBackColor = false;
@@ -109,10 +109,10 @@
             this.btnAjouter.BackColor = System.Drawing.Color.Transparent;
             this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjouter.ForeColor = System.Drawing.Color.Black;
-            this.btnAjouter.Location = new System.Drawing.Point(82, 486);
+            this.btnAjouter.Location = new System.Drawing.Point(401, 26);
             this.btnAjouter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(238, 54);
+            this.btnAjouter.Size = new System.Drawing.Size(224, 54);
             this.btnAjouter.TabIndex = 57;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = false;
@@ -121,19 +121,19 @@
             // dgvMatiere
             // 
             this.dgvMatiere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMatiere.Location = new System.Drawing.Point(446, 157);
+            this.dgvMatiere.Location = new System.Drawing.Point(393, 138);
             this.dgvMatiere.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMatiere.Name = "dgvMatiere";
             this.dgvMatiere.RowHeadersWidth = 51;
             this.dgvMatiere.RowTemplate.Height = 24;
-            this.dgvMatiere.Size = new System.Drawing.Size(795, 531);
+            this.dgvMatiere.Size = new System.Drawing.Size(834, 531);
             this.dgvMatiere.TabIndex = 56;
             // 
             // txtVolumeHorraire
             // 
             this.txtVolumeHorraire.AutoSize = true;
             this.txtVolumeHorraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVolumeHorraire.Location = new System.Drawing.Point(78, 342);
+            this.txtVolumeHorraire.Location = new System.Drawing.Point(22, 222);
             this.txtVolumeHorraire.Name = "txtVolumeHorraire";
             this.txtVolumeHorraire.Size = new System.Drawing.Size(132, 20);
             this.txtVolumeHorraire.TabIndex = 2;
@@ -142,17 +142,17 @@
             // txtVolumeH
             // 
             this.txtVolumeH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVolumeH.Location = new System.Drawing.Point(83, 372);
+            this.txtVolumeH.Location = new System.Drawing.Point(27, 252);
             this.txtVolumeH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtVolumeH.Name = "txtVolumeH";
-            this.txtVolumeH.Size = new System.Drawing.Size(237, 30);
+            this.txtVolumeH.Size = new System.Drawing.Size(227, 30);
             this.txtVolumeH.TabIndex = 45;
             // 
             // libelle
             // 
             this.libelle.AutoSize = true;
             this.libelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.libelle.Location = new System.Drawing.Point(78, 258);
+            this.libelle.Location = new System.Drawing.Point(22, 138);
             this.libelle.Name = "libelle";
             this.libelle.Size = new System.Drawing.Size(61, 20);
             this.libelle.TabIndex = 1;
@@ -161,19 +161,19 @@
             // txtLibelle
             // 
             this.txtLibelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLibelle.Location = new System.Drawing.Point(83, 290);
+            this.txtLibelle.Location = new System.Drawing.Point(27, 170);
             this.txtLibelle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLibelle.Name = "txtLibelle";
-            this.txtLibelle.Size = new System.Drawing.Size(237, 30);
+            this.txtLibelle.Size = new System.Drawing.Size(227, 30);
             this.txtLibelle.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(976, 732);
+            this.button1.Location = new System.Drawing.Point(122, 618);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 44);
+            this.button1.Size = new System.Drawing.Size(212, 44);
             this.button1.TabIndex = 62;
             this.button1.Text = "Quitter";
             this.button1.UseVisualStyleBackColor = true;

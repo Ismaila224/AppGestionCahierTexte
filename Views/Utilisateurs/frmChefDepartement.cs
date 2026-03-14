@@ -195,6 +195,5 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

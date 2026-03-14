@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(91, 260);
+            this.label1.Location = new System.Drawing.Point(25, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 20);
             this.label1.TabIndex = 0;
@@ -53,17 +53,17 @@
             // 
             // txtLibelleAnneeAcademique
             // 
-            this.txtLibelleAnneeAcademique.Location = new System.Drawing.Point(95, 299);
+            this.txtLibelleAnneeAcademique.Location = new System.Drawing.Point(29, 163);
             this.txtLibelleAnneeAcademique.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLibelleAnneeAcademique.Multiline = true;
             this.txtLibelleAnneeAcademique.Name = "txtLibelleAnneeAcademique";
-            this.txtLibelleAnneeAcademique.Size = new System.Drawing.Size(238, 34);
+            this.txtLibelleAnneeAcademique.Size = new System.Drawing.Size(213, 34);
             this.txtLibelleAnneeAcademique.TabIndex = 1;
             // 
             // dgvAnneeAcademique
             // 
             this.dgvAnneeAcademique.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnneeAcademique.Location = new System.Drawing.Point(434, 124);
+            this.dgvAnneeAcademique.Location = new System.Drawing.Point(355, 119);
             this.dgvAnneeAcademique.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvAnneeAcademique.Name = "dgvAnneeAcademique";
             this.dgvAnneeAcademique.RowHeadersWidth = 51;
@@ -74,10 +74,10 @@
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(855, 725);
+            this.btnQuitter.Location = new System.Drawing.Point(134, 643);
             this.btnQuitter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(238, 44);
+            this.btnQuitter.Size = new System.Drawing.Size(198, 44);
             this.btnQuitter.TabIndex = 17;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -86,10 +86,10 @@
             // btnSupprimer
             // 
             this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(94, 653);
+            this.btnSupprimer.Location = new System.Drawing.Point(134, 574);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(238, 44);
+            this.btnSupprimer.Size = new System.Drawing.Size(198, 44);
             this.btnSupprimer.TabIndex = 16;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -98,10 +98,10 @@
             // Modifier
             // 
             this.Modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Modifier.Location = new System.Drawing.Point(94, 584);
+            this.Modifier.Location = new System.Drawing.Point(342, 13);
             this.Modifier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(238, 50);
+            this.Modifier.Size = new System.Drawing.Size(198, 50);
             this.Modifier.TabIndex = 15;
             this.Modifier.Text = "Modifier";
             this.Modifier.UseVisualStyleBackColor = true;
@@ -110,10 +110,10 @@
             // btnSelectionner
             // 
             this.btnSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectionner.Location = new System.Drawing.Point(94, 124);
+            this.btnSelectionner.Location = new System.Drawing.Point(855, 11);
             this.btnSelectionner.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSelectionner.Name = "btnSelectionner";
-            this.btnSelectionner.Size = new System.Drawing.Size(238, 52);
+            this.btnSelectionner.Size = new System.Drawing.Size(200, 52);
             this.btnSelectionner.TabIndex = 14;
             this.btnSelectionner.Text = "Selectionner";
             this.btnSelectionner.UseVisualStyleBackColor = true;
@@ -122,10 +122,10 @@
             // btnAjouter
             // 
             this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouter.Location = new System.Drawing.Point(94, 508);
+            this.btnAjouter.Location = new System.Drawing.Point(602, 11);
             this.btnAjouter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(238, 54);
+            this.btnAjouter.Size = new System.Drawing.Size(200, 54);
             this.btnAjouter.TabIndex = 13;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -133,18 +133,18 @@
             // 
             // txtValueAnneeAcademique
             // 
-            this.txtValueAnneeAcademique.Location = new System.Drawing.Point(94, 389);
+            this.txtValueAnneeAcademique.Location = new System.Drawing.Point(28, 253);
             this.txtValueAnneeAcademique.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValueAnneeAcademique.Multiline = true;
             this.txtValueAnneeAcademique.Name = "txtValueAnneeAcademique";
-            this.txtValueAnneeAcademique.Size = new System.Drawing.Size(238, 41);
+            this.txtValueAnneeAcademique.Size = new System.Drawing.Size(213, 41);
             this.txtValueAnneeAcademique.TabIndex = 19;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(90, 354);
+            this.label2.Location = new System.Drawing.Point(24, 218);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(216, 20);
             this.label2.TabIndex = 18;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1207, 819);
+            this.ClientSize = new System.Drawing.Size(1179, 748);
             this.ControlBox = false;
             this.Controls.Add(this.txtValueAnneeAcademique);
             this.Controls.Add(this.label2);

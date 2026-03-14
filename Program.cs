@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AppGestionCahierTexte
 {
     internal static class Program
@@ -24,6 +25,7 @@ namespace AppGestionCahierTexte
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmConnexion());
         }
+
 
          //<summary>
 		/// creer un user par defaut pour la première utilisation de l'application

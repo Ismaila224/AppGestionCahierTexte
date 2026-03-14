@@ -113,6 +113,5 @@ namespace AppGestionCahierTexte.Views.Parametre
             affichage();
         }
 
-    
     }
 }

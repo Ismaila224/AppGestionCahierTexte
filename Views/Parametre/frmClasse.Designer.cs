@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(94, 213);
+            this.label1.Location = new System.Drawing.Point(10, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 20);
             this.label1.TabIndex = 0;
@@ -54,19 +54,19 @@
             // txtLielleClasse
             // 
             this.txtLielleClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLielleClasse.Location = new System.Drawing.Point(96, 249);
+            this.txtLielleClasse.Location = new System.Drawing.Point(12, 154);
             this.txtLielleClasse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLielleClasse.Name = "txtLielleClasse";
-            this.txtLielleClasse.Size = new System.Drawing.Size(238, 30);
+            this.txtLielleClasse.Size = new System.Drawing.Size(221, 30);
             this.txtLielleClasse.TabIndex = 1;
             // 
             // btnAjouter
             // 
             this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouter.Location = new System.Drawing.Point(98, 477);
+            this.btnAjouter.Location = new System.Drawing.Point(386, 13);
             this.btnAjouter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(238, 54);
+            this.btnAjouter.Size = new System.Drawing.Size(203, 54);
             this.btnAjouter.TabIndex = 8;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -75,10 +75,10 @@
             // btnSelectionner
             // 
             this.btnSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectionner.Location = new System.Drawing.Point(98, 107);
+            this.btnSelectionner.Location = new System.Drawing.Point(882, 15);
             this.btnSelectionner.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSelectionner.Name = "btnSelectionner";
-            this.btnSelectionner.Size = new System.Drawing.Size(238, 52);
+            this.btnSelectionner.Size = new System.Drawing.Size(203, 52);
             this.btnSelectionner.TabIndex = 9;
             this.btnSelectionner.Text = "Selectionner";
             this.btnSelectionner.UseVisualStyleBackColor = true;
@@ -87,10 +87,10 @@
             // Modifier
             // 
             this.Modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Modifier.Location = new System.Drawing.Point(98, 569);
+            this.Modifier.Location = new System.Drawing.Point(632, 15);
             this.Modifier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(238, 50);
+            this.Modifier.Size = new System.Drawing.Size(203, 50);
             this.Modifier.TabIndex = 10;
             this.Modifier.Text = "Modifier";
             this.Modifier.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@
             // btnSupprimer
             // 
             this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(98, 647);
+            this.btnSupprimer.Location = new System.Drawing.Point(105, 590);
             this.btnSupprimer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(238, 44);
+            this.btnSupprimer.Size = new System.Drawing.Size(197, 44);
             this.btnSupprimer.TabIndex = 11;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -111,10 +111,10 @@
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(953, 722);
+            this.btnQuitter.Location = new System.Drawing.Point(105, 658);
             this.btnQuitter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(238, 44);
+            this.btnQuitter.Size = new System.Drawing.Size(197, 44);
             this.btnQuitter.TabIndex = 12;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             // dgvClasse
             // 
             this.dgvClasse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClasse.Location = new System.Drawing.Point(451, 103);
+            this.dgvClasse.Location = new System.Drawing.Point(337, 119);
             this.dgvClasse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvClasse.Name = "dgvClasse";
             this.dgvClasse.RowHeadersWidth = 51;
@@ -135,17 +135,17 @@
             // 
             this.cbbAnneeAcademique.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbAnneeAcademique.FormattingEnabled = true;
-            this.cbbAnneeAcademique.Location = new System.Drawing.Point(96, 346);
+            this.cbbAnneeAcademique.Location = new System.Drawing.Point(12, 251);
             this.cbbAnneeAcademique.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbAnneeAcademique.Name = "cbbAnneeAcademique";
-            this.cbbAnneeAcademique.Size = new System.Drawing.Size(236, 33);
+            this.cbbAnneeAcademique.Size = new System.Drawing.Size(219, 33);
             this.cbbAnneeAcademique.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 309);
+            this.label2.Location = new System.Drawing.Point(8, 214);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 20);
             this.label2.TabIndex = 15;
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 799);
+            this.ClientSize = new System.Drawing.Size(1268, 799);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbbAnneeAcademique);
