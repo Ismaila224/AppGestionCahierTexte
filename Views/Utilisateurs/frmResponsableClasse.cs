@@ -23,8 +23,9 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
         {
             InitializeComponent();
 			affichage();
-		}
-		List<ResponsableClasse> responsables = new List<ResponsableClasse>();
+            chargementCbb();
+        }
+		//List<ResponsableClasse> responsables = new List<ResponsableClasse>();
          BdCahierTexteContext db = new BdCahierTexteContext();
         private void btnAjouter_Click(object sender, EventArgs e)
         {
@@ -37,6 +38,7 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
 
                 if (verifSaisie())
                 {
+                    Classe classe = cbbClasse.SelectedItem as Classe;
                     ResponsableClasse responsable = new ResponsableClasse
                     {
                         nomU = txtNom.Text,
@@ -46,11 +48,13 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                         telephoneU = txtTel.Text,
                         identifiantU = txtIdentifiant.Text,
                         motDePasseU = mdpDefaut,
-                        MatriculeApprenant = txtMat.Text,
-                        idClasse = int.Parse(txtNomClasse.Text)
+                        MatriculeApprenant = "",
+                        idClasse = classe.idClasse ,
 
                     };
                     db.ResponsableClasse.Add(responsable);
+                    db.SaveChanges();
+                    responsable.MatriculeApprenant = "R-" + txtPrenom.Text.Substring(0, 1).ToUpper() + txtNom.Text.Substring(0, 1).ToUpper() + "-" + responsable.IdU.ToString().PadLeft(3, '0');
                     db.SaveChanges();
                     clear();
                     affichage();
@@ -66,6 +70,22 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
             }
 		}
 
+        public void chargementCbb()
+        {
+            List<Classe> classes = new List<Classe>();
+            classes = db.Classe.ToList();
+            classes.Insert(0, new Classe
+            {
+                idClasse = 0,
+                LibelleClasse = "Sélectionner"
+            });
+            this.cbbClasse.Items.Clear();
+            this.cbbClasse.DataSource = classes;
+            this.cbbClasse.DisplayMember = "LibelleClasse";
+            this.cbbClasse.ValueMember = "idClasse";
+            cbbClasse.SelectedIndex = 0;
+
+        }
 
 
         public void clear()
@@ -77,20 +97,34 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
             this.txtTel.Text = string.Empty;
             this.txtIdentifiant.Text = string.Empty;
             this.txtMat.Text = string.Empty;
-            this.txtNomClasse.Text = string.Empty;
+            chargementCbb();
         }
         public void affichage()
         {
             //responsables.Clear();
 
-            responsables = db.ResponsableClasse
-                .Include(r => r.Classe)
-                .ToList();
+            var responsables = db.ResponsableClasse
+				.Include(r => r.Classe)
+				.Select(r => new
+                {
+                    r.IdU,
+					Matricule = r.MatriculeApprenant,
+                    Nom = r.nomU,
+                    Prenom = r.prenomU,
+                    Classe = r.Classe.LibelleClasse,
+					Adresse = r.prenomU,
+                    Email = r.emailU,
+                    Telephone = r.telephoneU,
+                    Identifiant = r.identifiantU,
+
+                })
+				.ToList();
             
 
             dgvResponsable.DataSource = null;
             dgvResponsable.DataSource = responsables;
-        
+            dgvResponsable.Columns["IdU"].Visible = false;
+
 		}
 
         public Boolean verifSaisie()
@@ -108,12 +142,14 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
 
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgvResponsable.CurrentRow != null)
+           if (dgvResponsable.CurrentRow != null)
+           {
+                int id = (int)dgvResponsable.CurrentRow.Cells["IdU"].Value;
+                ResponsableClasse responsable = db.ResponsableClasse.Find(id);
+				//ResponsableClasse responsable = dgvResponsable.CurrentRow.DataBoundItem as ResponsableClasse;
+                if (responsable != null)
                 {
-                    ResponsableClasse responsable = dgvResponsable.CurrentRow.DataBoundItem as ResponsableClasse;
-                    if (responsable != null)
+                    try
                     {
                         txtNom.Text = responsable.nomU;
                         txtPrenom.Text = responsable.prenomU;
@@ -122,23 +158,24 @@ namespace AppGestionCahierTexte.Views.Utilisateurs
                         txtMat.Text = responsable.MatriculeApprenant;
                         txtTel.Text = responsable.telephoneU;
                         txtIdentifiant.Text = responsable.identifiantU;
-                        
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Aucune ligne selectionner");
+                        MessageBox.Show(ex.Message);
+                        Logger.Error("Erreur de selection", ex.Message);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Choisir la ligne à selectionner");
+                    MessageBox.Show("Aucune ligne selectionner");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                }
+           else
+           {
+                MessageBox.Show("Choisir la ligne à selectionner");
+           }
         }
+        
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {

@@ -20,9 +20,9 @@ namespace AppGestionCahierTexte
         public frmConnexion()
         {
             InitializeComponent();
-        }
+		}
 
-        private void btnQuitter_Click(object sender, EventArgs e)
+		private void btnQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -54,10 +54,11 @@ namespace AppGestionCahierTexte
                         this.Hide();
                     }
                 }
-                else { MessageBox.Show("Identifiant ou mot de passe incorrecte");
-
-                }
-            }
+                else { 
+                    MessageBox.Show("Identifiant ou mot de passe incorrecte");
+					Logger.Error("Erreur de connexion","Identifiant ou mot de passe incorrecte");
+				}
+			}
             else
             {
                 MessageBox.Show("Zone de saisie non remplie");

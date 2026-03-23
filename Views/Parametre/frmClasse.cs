@@ -1,4 +1,5 @@
 ﻿using AppGestionCahierTexte.Models;
+using AppGestionCahierTexte.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,15 +50,25 @@ namespace AppGestionCahierTexte.Views.Parametre
             {
                 if (txtLielleClasse.Text != "")
                 {
-                    AnneeAcademique AnneeAc = cbbAnneeAcademique.SelectedItem as AnneeAcademique;
-                    Classe classe = new Classe();
-                    classe.LibelleClasse = txtLielleClasse.Text;
-                    classe.IdAnneeAcademique = AnneeAc.IdAnneeAcademique;
-                    db.Classe.Add(classe);
-                    db.SaveChanges();
-                    afficheAnne();
-                    afficheClasse();
-                    cbbAnneeAcademique.SelectedIndex = 0;
+                    try
+                    {
+						AnneeAcademique AnneeAc = cbbAnneeAcademique.SelectedItem as AnneeAcademique;
+						Classe classe = new Classe();
+						classe.LibelleClasse = txtLielleClasse.Text;
+						classe.IdAnneeAcademique = AnneeAc.IdAnneeAcademique;
+						db.Classe.Add(classe);
+						db.SaveChanges();
+						afficheAnne();
+						afficheClasse();
+						cbbAnneeAcademique.SelectedIndex = 0;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erreur lors de la conversion de l'année académique : " + ex.Message);
+                        Logger.Error("Erreur lors de la conversion de l'année académique  " ,ex.Message);
+                        return;
+					}
                 }
                 else
                 {
@@ -90,10 +101,24 @@ namespace AppGestionCahierTexte.Views.Parametre
             Classe c = dgvClasse.CurrentRow.DataBoundItem as Classe;
             if (c != null)
             {
-                db.Classe.Remove(c);
-                db.SaveChanges();
-                afficheClasse();
-                afficheAnne();
+                try
+                {
+                    db.Classe.Remove(c);
+                    db.SaveChanges();
+                    afficheClasse();
+                    afficheAnne();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de la suppression de la classe : " + ex.Message);
+                    Logger.Error("Erreur lors de la suppression de la classe  ", ex.Message);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selectionner une ligne");
             }
         }
 
@@ -105,12 +130,21 @@ namespace AppGestionCahierTexte.Views.Parametre
             {
                 if (aa != null && cbbAnneeAcademique.SelectedIndex != 0)
                 {
-                    c.LibelleClasse = txtLielleClasse.Text;
-                    c.IdAnneeAcademique = aa.IdAnneeAcademique;
-                    db.SaveChanges();
-                    afficheClasse();
-                    afficheAnne();
-                }
+                    try
+                    {
+                        c.LibelleClasse = txtLielleClasse.Text;
+                        c.IdAnneeAcademique = aa.IdAnneeAcademique;
+                        db.SaveChanges();
+                        afficheClasse();
+                        afficheAnne();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erreur lors de la modification de la classe : " + ex.Message);
+                        Logger.Error("Erreur lors de la modification de la classe  ", ex.Message);
+                        return;
+                    }
+				}
                 else
                 {
                     MessageBox.Show("Selectionner une ligne");

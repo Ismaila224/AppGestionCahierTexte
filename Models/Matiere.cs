@@ -14,7 +14,7 @@ namespace AppGestionCahierTexte.Models
         [Required, MaxLength(200)]
         public string libelleMatiere { get; set; }
         [Required]
-        public int? VolumeHoreureMatiere { get; set; }
+        public int? VolumeHoraireMatiere { get; set; }
         [Required, MinLength(80)]
         public String niveau { get; set; }
     }
